@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraíso das ilhas - Sobre</title>   
+
+    <link rel="shortcut icon" href="https://images.icon-icons.com/1859/PNG/512/beach_117930.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- link animacao css-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-Primaria:"Pacifico", cursive;
+    --font-Secundaria: "Raleway", sans serif;
+    --font-Texto:"Open sans", sans serif;
+    --cor-Azul-Claro: #87CEEB;
+    --cor-Azul-Turquesa: #40E0D0;
+    --cor-Verde-Esmeralda:#50C878;
+    --cor-Branco :#FFFFFF; 
+    --cor-Bege: #F5F5DC;
+}
+
+body{
+        background: #87ceeb;
+        background: -webkit-radial-gradient(circle, #87ceeb 20%, #87ceeb 80%);
+        background: radial-gradient(circle, #87ceeb 20%, #87ceeb 80%);
+
+        padding: 10px;
+    }
+
+
+
+    header{
+    position: fixed;
+    top: -1px;
+    z-index: 9999;
+    width: 100%;
+}
+.navbar {
+    background-color: var(--cor-Azul-Claro);
+
+    
+
+    & .logo {
+        width: 200px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        & h1{
+            font-family: var(--font-Primaria);
+            font-size: 20px;
+            color: black;
+            cursor: default;
+
+        }
+    }
+    .logo img{
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+
+    & .links {
+        width: 500px;
+        
+        & a {
+            text-decoration: none;
+            color: var(--cor-Verde-Esmeralda);
+            font-weight: 500;
+            font-family: var(--font-Secundaria);
+            border-bottom: 2px solid #F5F5DC;
+            transition: .2s ease;
+            
+        }
+        & a:hover {
+            color: var(--cor-Bege);
+            border-top: 2px solid #50C878;
+            border-bottom: none;
+            transition: .1s ease;
+        }
+    }
+}
+
+
+.section-sobre{
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+
+    z-index: 1;
+    /* Garantir que o conteúdo fique acima do vídeo */
+    background-color:rgba(135, 207, 235, 0.199) ;
+    /* Fundo semi-transparente para melhor legibilidade */
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+.section-sobre .titulo{
+    display: flex;
+    justify-content: center;
+    
+    & h2{
+        font-family: var(--font-Secundaria);
+        font-weight: 600;
+        color: var(--cor-Bege);
+    }
+}
+
+
+.parent {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 18px;
+    padding: 10px;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
+    gap: 8px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+    transform: translateY(0);
+    
+    
+}
+
+.parent div {
+    background: #ffffff;
+background: -webkit-radial-gradient(circle, #ffffff 0%, #f5f5dc 100%);
+background: radial-gradient(circle, #ffffff 0%, #f5f5dc 100%);
+    padding: 10px 5px 5px 5px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    animation: float 3s ease-in-out infinite; /* Animação de flutuação */
+}
+/* Efeito ao passar o mouse */
+        .parent div:hover {
+            animation: none; /* Pausa a animação de flutuação */
+            rotate: -2deg;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+        }
+    .parent{
+        line-height: 20px;
+
+        & h5{
+            font-size: 12px;
+            font-family: var(--font-Secundaria);
+            font-weight: 700;
+        }
+        & p{
+            font-family: var(--font-Texto);
+            font-size: 12px;   
+        }
+    }    
+
+/* Animação de flutuação */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0); /* Posição inicial e final */
+            }
+            50% {
+                transform: translateY(-20px); /* Movimento para cima */
+            }
+        }
+
+
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 568px){
+    .carousel, .carousel img{
+        width: 330px;
+        height: 260px;
+    }
+    .navbar .logo h1{font-size: 16px;}
+    .links a{font-size: 15px;}
+
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+    
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 10px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.815);
+    color: var(--cor-Azul-Claro);
+    font-family: var(--font-Texto);
+
+    & .redes-sociais{
+        margin-bottom: 10px;
+        margin-top: 10px;
+
+        & a{
+            color: var(--cor-Azul-Claro);
+            margin-right: 10px;
+        }
+        & a:hover{
+            border-bottom: 1px solid #40E0D0;
+            transition: .3s ease;
+        }
+    }
+    & .sites{
+        display: flex;
+        justify-content: end;
+        gap: 20px;
+        width: 300px;
+
+        & p{
+            display: flex;
+            flex-direction: column;
+            font-family: var(--font-Texto);
+            
+            & abbr{
+                text-decoration: none;
+            }
+            & a{
+                color: var(--cor-Azul-Claro);
+                margin-bottom: 2px;
+            }
+            & a:hover{
+                color:#40e0d07c;
+                transition: .3s ease;
+            }
+        }
+        & p a{
+            text-decoration: none;
+            font-size: 12.5px;
+        }
+    }
+
+    & #copyright{
+        font-size: 11px;
+    }
+}
+
+</style>
+<body>
+
+    <header>
+        <nav class="navbar  navbar-expand-lg ">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="https://images.icon-icons.com/1859/PNG/512/beach_117930.png" alt="">
+                    <h1>
+                        Paraíso das Ilhas
+                    </h1>
+                </div>
+                <div class="links">
+                    <a href="../index.html" class="navbar-brand">Inicio</a>
+                    <a href="ilha.html" class="navbar-brand">Ilhas</a>
+                    <a href="galeria.html" class="navbar-brand">Galeria</a>
+                    <a href="sobre.html" class="navbar-brand">Sobre</a>
+                    <a href="#contato" class="navbar-brand">Contato</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="section-sobre">
+        
+            <div class="titulo">
+                <h2>Sobre o Paraíso das Ilhas</h2>
+            </div>
+        <div class="parent">
+            <div class="div1 animate__animated animate__flipInX">
+                <h5>Bem-vindo ao Paraíso das Ilhas!</h5>
+                    <p>Nosso site nasceu da paixão por explorar e compartilhar as belezas naturais e culturais das ilhas ao redor do mundo. Queremos inspirar você a descobrir lugares incríveis, desde praias paradisíacas até ilhas vulcânicas cheias de mistérios.</p>
+            </div>
+
+            <div class="div2">
+                <h5>Qual é o nosso objetivo?</h5>
+                    <p>Nosso principal objetivo é ser sua fonte de inspiração para viagens inesquecíveis. Queremos mostrar que as ilhas são muito mais do que destinos turísticos: são lugares cheios de histórias, culturas únicas e paisagens que parecem saídas de sonhos.</p>
+
+            </div>
+            <div class="div3">
+                <h5>O que você encontra aqui?</h5>
+                    <p>
+                        Curiosidades sobre ilhas famosas e desconhecidas.
+                        
+                        Dicas de viagem para planejar sua próxima aventura.
+                        
+                        Fotos deslumbrantes que vão te transportar para esses paraísos.
+                        
+                        Informações sobre a cultura, história e ecologia de cada lugar.
+                    </p>
+            </div>
+            <div class="div4">
+                <h5>Por que ilhas?</h5>
+                    <p>Ilhas são lugares mágicos. Elas nos conectam com a natureza, nos fazem sentir pequenos diante da imensidão do mar e nos lembram da importância de preservar esses ecossistemas únicos. Cada ilha tem uma história para contar, e queremos compartilhá-las com você.</p>
+
+            </div>
+            <div class="div5">
+                <h5>Quem somos?</h5>
+                    <p>Somos um grupo de viajantes, fotógrafos e amantes da natureza que decidiram unir suas paixões para criar este espaço. Acreditamos que viajar é uma das melhores formas de aprender, crescer e se conectar com o mundo.</p>
+
+            </div>
+            <div class="div6">
+                <h5>E você, já visitou alguma ilha?</h5>
+                    <p>Adoraríamos saber sobre suas experiências! Compartilhe conosco suas histórias, fotos e dicas. Quem sabe sua ilha favorita não vira o próximo destaque do nosso site?</p>
+
+            </div>
+            <div class="div7">
+                <h5>O que mais você gostaria de ver aqui?</h5>
+                    <p>Estamos sempre buscando melhorar e trazer conteúdo relevante para você. Tem alguma sugestão de ilha, tema ou curiosidade? Mande uma mensagem para a gente! Sua opinião é muito importante.</p>
+
+            </div>
+            <div class="div8">
+                <h5>Por que preservar as ilhas?</h5>
+                    <p>Muitas ilhas enfrentam desafios como mudanças climáticas, poluição e turismo descontrolado. Queremos conscientizar nossos visitantes sobre a importância de viajar de forma sustentável, respeitando a natureza e as comunidades locais.</p>
+
+            </div>
+            <div class="div9"><h5>Você sabia?</h5>
+
+                    <p>
+                        A maior ilha do mundo é a Groenlândia.
+                        
+                        A menor ilha habitada fica no Reino Unido e tem apenas 0,004 km².
+                        
+                        Algumas ilhas, como as Maldivas, estão ameaçadas pelo aumento do nível do mar.
+                    </p>
+                </div>
+            <div class="div10">
+                <h5>Qual é a sua ilha dos sonhos?</h5>
+                    <p>Imagine-se em uma praia de areia branca, com águas cristalinas e um coqueiro balançando ao vento. Qual ilha você escolheria? Conte para a gente nos comentários ou nas redes sociais!</p>
+            </div>
+            <div class="div11">
+                <h5>Dicas para viajar para ilhas:</h5>
+
+                    <p>
+                        Pesquise sobre a cultura local antes de viajar.
+                        
+                        Leve protetor solar e repelente para se proteger do sol e dos mosquitos.
+                        
+                        Respeite a natureza: não leve "lembranças" como conchas ou corais.
+                        
+                        Apoie o comércio local e os pequenos negócios.
+                    </p>
+            </div>
+            <div class="div12">
+                <h5>
+                        
+                        Ilhas famosas x Ilhas desconhecidas:
+                    </h5>
+                    <p>Enquanto todos conhecem destinos como Maldivas e Bora Bora, existem ilhas incríveis que ainda são pouco exploradas. Que tal descobrir um lugar novo e surpreendente?</p>
+            </div>
+            <div class="div13">
+                <h5>Fotografia e inspiração:</h5>
+                    <p>Nossa galeria de fotos é um convite para sonhar e planejar sua próxima viagem. Cada imagem foi cuidadosamente selecionada para mostrar a beleza e a diversidade das ilhas.</p>
+            </div>
+            <div class="div14">
+                <h5>Você já ouviu falar em ecoturismo?</h5>
+                    <p>Muitas ilhas oferecem experiências incríveis de ecoturismo, como mergulho com tartarugas, trilhas em florestas tropicais e observação de aves. Que tal incluir uma dessas atividades na sua próxima viagem?</p>
+
+            </div>
+            <div class="div15">
+                <h5>Ilhas e sustentabilidade:</h5>
+                    <p>Acreditamos que o turismo pode ser uma força positiva. Por isso, incentivamos práticas sustentáveis, como reduzir o uso de plásticos e apoiar projetos de conservação ambiental.</p>
+
+            </div>
+            <div class="div16">
+                <h5>Curiosidades que você vai adorar:</h5>
+
+                    <p>
+                        A ilha de Páscoa tem estátuas gigantes chamadas moais.
+                        
+                        Em Palawan, nas Filipinas, existe um rio subterrâneo navegável.
+                        
+                        A Islândia é uma ilha vulcânica com geleiras e auroras boreais.
+                        
+                        Vamos juntos nessa jornada!
+                        Explore nosso site, descubra novas ilhas e inspire-se para sua próxima aventura. O mundo é cheio de lugares incríveis esperando para serem explorados.
+                    </p>
+            </div>
+            <div class="div17">
+                <h5>Compartilhe suas experiências:</h5>
+                    <p>Adoraríamos ver suas fotos e histórias de viagem. Marque a gente nas redes sociais com a hashtag #ParaísoDasIlhas e inspire outros viajantes!</p>
+            </div>
+            <div class="div18">
+                <h5>Fale conosco:</h5>
+                    <p>
+                        Tem alguma dúvida, sugestão ou só quer bater um papo sobre ilhas? Entre em contato pelo nosso formulário ou pelas redes sociais. Estamos sempre por aqui!
+                        
+                        Obrigado por visitar o Paraíso das Ilhas!
+                        Esperamos que você se inspire, aprenda algo novo e, quem sabe, comece a planejar sua próxima viagem para uma ilha incrível. O mar está chamando, e o paraíso espera por você!
+                    </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer id="contato">
+        <div class="redes-sociais">
+            <a href="https://facebook.com/profile.php?id=61551343635224" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/joelnogueira98" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://instagram.com/joelnogueira98" target="_blank"><i class="bi bi-instagram"></i></a>
+        </div>
+        <div class="sites">
+            <p>
+                <abbr title="reservas de hotéis"><a href="https://www.booking.com/" target="_blank">Booking.com</a></abbr>
+                <abbr title="avaliações e dicas de viagem"><a href="https://www.tripadvisor.com/" target="_blank">TripAdvisor</a></abbr>
+                <abbr title="ilhas patrimônios mundiais"><a href="https://whc.unesco.org/" target="_blank">Unesco.org</a></abbr>
+            </p>
+            <p>
+                <abbr title="site da companhia aérea de Angola"><a href="https://www.taag.com/" target="_blank">TAAG.com</a></abbr>
+                <abbr title="site dedicado ao turismo em Angola"><a href="http://www.turismodeangola.com/" target="_blank">Turismo de Angola</a></abbr>
+                <abbr title="aeroporto internacional de Luanda"><a href="http://www.luandaairport.co.ao/" target="_blank">Luanda Airport</a></abbr>
+            </p>
+        </div>
+        <div id="copyright">© 2025 Paraíso das Ilhas. Todos os direitos reservados.</div>
+    </footer> 
+    
+
+<script>
+    
+
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

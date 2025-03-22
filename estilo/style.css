@@ -1,0 +1,236 @@
+
+/*
+Paleta de Cores Azulada 
+Azul Claro (#87CEEB): Para fundos e destaques. 
+Azul Turquesa (#40E0D0): Para botões e links. 
+Azul Escuro (#000080): Para textos e bordas. 
+Branco (#FFFFFF): Para textos sobre fundos escuros. 
+Bege (#F5F5DC): Para fundos secundários (remetendo à areia).
+
+Roxo Profundo (#4B0082): Representa flores tropicais. 
+Rosa Vibrante (#FF007F): Flores e frutas exóticas.
+ Verde Lima (#32CD32): Vegetação exuberante. 
+ Azul Turquesa (#40E0D0): Águas cristalinas.
+  Branco (#FFFFFF): Para equilíbrio.
+
+Verde Floresta (#228B22): Representa a vegetação densa. 
+Verde Limão (#ADFF2F): Tons de folhagens tropicais. 
+Azul Marinho (#000080): O mar ao fundo. 
+Amarelo Claro (#FFFACD): Reflexos do sol. 
+Branco (#FFFFFF): Para contrastes.
+
+Azul Turquesa (#40E0D0): Representa o mar cristalino. 
+Verde Esmeralda (#50C878): Remete às florestas tropicais. 
+Amarelo Sol (#FFD700): Simboliza o sol e a areia dourada.
+ Rosa Choque (#FF1493): Representa flores tropicais. 
+ Branco (#FFFFFF): Para contrastes e fundos
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-Primaria:"Pacifico", cursive;
+    --font-Secundaria: "Raleway", sans serif;
+    --font-Texto:"Open sans", sans serif;
+    --cor-Azul-Claro: #87CEEB;
+    --cor-Azul-Turquesa: #40E0D0;
+    --cor-Verde-Esmeralda:#50C878;
+    --cor-Branco :#FFFFFF; 
+    --cor-Bege: #F5F5DC;
+}
+
+header {
+    position: fixed;
+    top: -1px;
+    z-index: 9999;
+    width: 100%;
+}
+.navbar {
+    background-color: var(--cor-Azul-Claro);
+
+    
+
+    & .logo {
+        width: 200px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & h1{
+            font-family: var(--font-Primaria);
+            font-size: 20px;
+            color: black;
+            cursor: default;
+
+        }
+        
+    }
+    .logo img{
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+
+    & .links {
+        width: 500px;
+        
+        & a {
+                text-decoration: none;
+                color: var(--cor-Verde-Esmeralda);
+                font-weight: 500;
+                font-family: var(--font-Secundaria);
+                border-bottom: 2px solid #F5F5DC;
+                transition: .2s ease;
+        
+            }
+        
+            & a:hover {
+                color: var(--cor-Bege);
+                border-top: 2px solid #50C878;
+                border-bottom: none;
+                transition: .1s ease;
+            }
+    }
+}
+
+
+/* Estilos para a seção com vídeo de fundo */
+.video-section {
+    position: relative;
+    height: 100vh;
+    /* Cobrir a altura da tela */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-Bege);
+    text-align: center;
+}
+
+/* Vídeo de fundo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cobrir toda a área sem distorcer */
+    z-index: -1;
+    /* Colocar o vídeo atrás do conteúdo */
+}
+
+/* Conteúdo sobreposto */
+.video-content {
+    z-index: 1;
+    /* Garantir que o conteúdo fique acima do vídeo */
+    background-color:rgba(135, 207, 235, 0.199) ;
+    /* Fundo semi-transparente para melhor legibilidade */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.video-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "Pacifico";
+    
+}
+
+.video-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: "Raleway";
+    font-weight: 500;
+}
+
+.video-content .btn {
+    padding: 5px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-Bege);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--font-Secundaria);
+
+    background: #f5f5dc;
+    background: -webkit-linear-gradient(to right, #f5f5dc8a 0%, #50c878 100%);
+    background: linear-gradient(to right, #f5f5dc86 0%, #50c878 100%);
+}
+.video-content .btn:hover{
+    background: #50c878;
+    background: -webkit-linear-gradient(to right, #50c878 0%, #f5f5dc86 100%);
+    background: linear-gradient(to right, #50c878 0%, #f5f5dc8a 100%);
+    transition: .2s ease;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    
+    .video-content h1 {
+        font-size: 2rem;
+    }
+
+    .video-content p {
+        font-size: 1rem;
+    }
+        
+}
+
+@media (max-width: 568px) {
+
+    .navbar .logo h1 {
+        font-size: 16px;
+    }
+
+    .links a {
+        font-size: 15px;
+    }
+    
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.redes{
+    width: 30px;
+    height: 150px;
+    position: absolute;
+    background-color: #87CEEB;;
+    left: 0;
+    top: 70%;
+    border-radius: 0 35px 35px 0;
+
+    & p{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: 100%;
+        
+        & a{
+            color: var(--cor-Verde-Esmeralda);
+            
+        }
+        & a:hover{
+            border-bottom: 1px solid #50C878;
+            transition: .3s ease;
+            
+        }
+    }
+}
